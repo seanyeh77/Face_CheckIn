@@ -1,0 +1,42 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+
+<Page
+    x:Class="Face_CheckIn.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Face_CheckIn"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <SolidColorBrush x:Key="TranslucentBlackBrush" Color="Black" Opacity="0.3"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" d:IsHidden="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <CaptureElement x:Name="PreviewControl1" Stretch="Uniform" VerticalAlignment="Center" Grid.Column="0" d:IsHidden="True"/>
+        <CaptureElement x:Name="PreviewControl2" Stretch="Uniform" VerticalAlignment="Center" Grid.Column="1" d:IsHidden="True"/>
+        <Canvas Name="FacesCanvas1" Grid.Column="0" RenderTransformOrigin="0.5,0.5" Margin="0,0,750,0" d:LayoutOverrides="Width, LeftPosition, RightPosition"/>
+        <TextBlock x:Name="timeleft" Grid.Column="0" TextWrapping="Wrap" RenderTransformOrigin="1.019,0.945" FontSize="200" FontFamily="AcadEref" FontWeight="Bold" Foreground="#FF38E329" d:IsHidden="True"/>
+        <TextBlock x:Name="left" Grid.Column="0" TextWrapping="Wrap" Text="" FontSize="90" VerticalAlignment="Top" Foreground="Red" d:IsHidden="True"/>
+        <Canvas x:Name="FacesCanvas2" Grid.Column="1" RenderTransformOrigin="0.5,0.5" d:IsHidden="True"/>
+        <TextBlock x:Name="timeright" Grid.Column="1" TextWrapping="Wrap" RenderTransformOrigin="1.019,0.945" FontSize="200" FontFamily="AcadEref" FontWeight="Bold" Foreground="#FF38E329" HorizontalAlignment="Center" VerticalAlignment="Top" d:IsHidden="True"/>
+        <TextBlock x:Name="right" Grid.Column="1" TextWrapping="Wrap" Text="" FontSize="90" Foreground="Red"/>
+        <!--</Canvas>-->
+    </Grid>
+</Page>
